@@ -14,10 +14,7 @@
  * limitations under the License.
  */
 
-import {
-  DefaultAzureDevOpsCredentialsProvider,
-  ScmIntegrationRegistry
-} from "@backstage/integration";
+import { DefaultAzureDevOpsCredentialsProvider, ScmIntegrationRegistry } from "@backstage/integration";
 import { createTemplateAction } from "@backstage/plugin-scaffolder-node";
 
 export const createAzurePipelineAction = (options: {
