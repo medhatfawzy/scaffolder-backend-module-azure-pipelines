@@ -14,7 +14,10 @@
  * limitations under the License.
  */
 
-import {  DefaultAzureDevOpsCredentialsProvider, ScmIntegrationRegistry } from "@backstage/integration";
+import {
+  DefaultAzureDevOpsCredentialsProvider,
+  ScmIntegrationRegistry
+} from "@backstage/integration";
 import { createTemplateAction } from "@backstage/plugin-scaffolder-node";
 
 export const createAzurePipelineAction = (options: {
@@ -56,7 +59,7 @@ export const createAzurePipelineAction = (options: {
             type: "string",
             title: "Host",
             description: "The host of Azure DevOps. Defaults to dev.azure.com",
-          },          
+          },
           organization: {
             type: "string",
             title: "Organization",
@@ -91,6 +94,21 @@ export const createAzurePipelineAction = (options: {
             type: "string",
             title: "Azure DevOps Pipelines Definition",
             description: "The location of the Azure DevOps Pipeline definition file. Defaults to /azure-pipelines.yaml",
+          },
+        },
+      },
+      output: {
+        type: "object",
+        properties: {
+          pipelineId: {
+            type: "string",
+            title: "Pipeline ID",
+            description: "The ID of the created pipeline.",
+          },
+          pipelineUrl: {
+            type: "string",
+            title: "Pipeline URL",
+            description: "The URL of the created pipeline.",
           },
         },
       },
